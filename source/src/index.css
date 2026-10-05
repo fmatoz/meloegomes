@@ -292,3 +292,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-bottom{align-items:center;gap:16px;flex-wrap:wrap}.developer-credit a{display:inline-flex;align-items:center;gap:4px;color:var(--clay);text-decoration:none}.developer-credit a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:680px){.demo-welcome{padding:26px}.demo-brand{margin-bottom:22px}.footer-bottom{align-items:flex-start}}
 .demo-welcome{margin:auto}
+/* Identidade Gestão M7: carvão, branco e degradê roxo/azul. */
+.demo-welcome{background:#1b1b10;color:#fff;border-color:#444437;box-shadow:0 30px 100px rgba(0,0,0,.5)}
+.demo-brand{margin:-12px 0 12px;height:82px;overflow:hidden;justify-content:center}
+.demo-brand img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.65)}
+.demo-badge{color:#d9b5ff;border-color:rgba(183,50,243,.45);background:rgba(173,10,218,.12)}
+.demo-welcome h2{color:#fff}
+.demo-welcome>p{color:#d0d0c9}
+.demo-note{background:linear-gradient(120deg,rgba(174,7,218,.13),rgba(0,136,255,.12));border-left-color:#b20ddd}
+.demo-note strong{color:#fff}.demo-note p{color:#d0d0dc}
+.demo-enter{background:linear-gradient(110deg,#ad09d4,#7139e2 50%,#007bdd);border-color:transparent;color:#fff}
+.demo-enter:hover{background:linear-gradient(110deg,#bd20e4,#8250ed 50%,#0088ee);border-color:transparent;color:#fff}
+.demo-enter:focus-visible{outline-color:#ba7eff}
+.demo-welcome .demo-signature{color:#a8a8a1}
+.developer-credit a{color:#be92ff}.developer-credit a:hover{color:#83c5ff}
+@media(max-width:680px){.demo-brand{height:70px}}

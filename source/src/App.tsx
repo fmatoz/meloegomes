@@ -98,7 +98,7 @@ function App() {
     <div className="site-shell">
       {demoOpen && (
         <dialog ref={demoDialog} className="demo-welcome" aria-labelledby="demo-title" aria-describedby="demo-description" onCancel={() => setDemoOpen(false)}>
-          <div className="demo-brand">GESTÃO <strong>M7</strong></div>
+          <div className="demo-brand"><img src="/gestao-m7-logo.png" alt="Gestão M7 IA" width="1920" height="1080" /></div>
           <span className="demo-badge">Versão demonstrativa</span>
           <h2 id="demo-title">Seu novo site está pronto.</h2>
           <p id="demo-description">Boas-vindas à Gestão M7! Preparamos esta demonstração para você conhecer o novo site da Melo &amp; Gomes.</p>
