@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Melo & Gomes Marcenaria">
-  <rect width="64" height="64" fill="#111111"/>
-  <rect x="4" y="4" width="56" height="56" fill="none" stroke="#D4A373"/>
-  <text x="32" y="37" fill="#F7F5F2" font-family="Georgia, serif" font-size="18" letter-spacing="-1.2" text-anchor="middle">M&amp;G</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#111111"/><path d="M14 14h17v21H14zM35 10h15v25H35z" fill="none" stroke="#d4a373" stroke-width="2"/><path d="M14 21h17m-17 7h17m11-18v25" stroke="#d4a373" stroke-width="2"/><path d="M21 18h3m-3 7h3m-3 7h3m16-10v3m5-3v3" stroke="#f7f5f2" stroke-width="2"/><text x="32" y="54" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="17" fill="#f7f5f2">M&amp;G</text></svg>
