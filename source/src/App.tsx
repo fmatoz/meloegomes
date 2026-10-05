@@ -51,7 +51,7 @@ function App() {
     };
   }, [demoOpen]);
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    if (demoOpen || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
     const targets = Array.from(document.querySelectorAll<HTMLElement>('.section-heading, .service-card, .project-gallery, .review-card, .final-copy, .quote-form'));
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -59,11 +59,11 @@ function App() {
         entry.target.classList.add('is-revealed');
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
     targets.forEach(element => {
       const cards = element.parentElement?.children;
       const index = cards ? Array.from(cards).indexOf(element) : 0;
-      element.style.setProperty('--reveal-delay', element.matches('.service-card, .review-card') ? Math.min(index, 3) * 70 + 'ms' : '0ms');
+      element.style.setProperty('--reveal-delay', element.matches('.service-card, .review-card') ? Math.min(index, 3) * 110 + 'ms' : '0ms');
       element.classList.add('scroll-reveal');
       observer.observe(element);
     });
@@ -71,7 +71,7 @@ function App() {
       observer.disconnect();
       targets.forEach(element => element.classList.remove('scroll-reveal', 'is-revealed'));
     };
-  }, []);
+  }, [demoOpen]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formErrors, setFormErrors] = useState({ name: '', region: '', need: '' });
   const [submitError, setSubmitError] = useState('');
