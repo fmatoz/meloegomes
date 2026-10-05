@@ -278,3 +278,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .project-image-caption{padding:32px 16px 15px}
 @media(max-width:900px){.project-carousel-item{flex-basis:34%}.project-image-frame{aspect-ratio:.7}}
 @media(max-width:680px){.hero-mosaic{gap:4px}.project-carousel-item{flex-basis:84%}.project-image-frame{aspect-ratio:.7}}
+/* Apresentação temporária da versão demonstrativa. */
+.demo-welcome{width:min(540px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:38px;border:1px solid var(--line);border-radius:16px;background:var(--paper);color:var(--ink);box-shadow:0 30px 100px rgba(0,0,0,.35);overflow-y:auto}
+.demo-welcome::backdrop{background:rgba(8,8,8,.78);backdrop-filter:blur(7px)}
+.demo-brand{font-size:13px;letter-spacing:.12em;display:flex;align-items:center;gap:8px;margin-bottom:28px}
+.demo-brand strong{font-size:24px;letter-spacing:-.05em}
+.demo-badge{display:inline-block;padding:7px 10px;border:1px solid var(--line);border-radius:5px;color:var(--wood);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.demo-welcome h2{margin:20px 0 16px;font:500 clamp(2.4rem,8vw,3.2rem)/1.05 var(--font-display);letter-spacing:-.045em}
+.demo-welcome>p{font-size:15px;line-height:1.75;color:#6b635c}
+.demo-note{padding:20px;margin:24px 0;background:var(--cream);border-radius:9px;border-left:3px solid var(--wood)}
+.demo-note strong{font-size:14px}.demo-note p{margin:8px 0 0;font-size:14px;line-height:1.7;color:#514a44}
+.demo-enter{width:100%;font-size:14px}.demo-welcome .demo-signature{font-size:11px;text-align:center;margin:14px 0 0}
+.footer-bottom{align-items:center;gap:16px;flex-wrap:wrap}.developer-credit a{display:inline-flex;align-items:center;gap:4px;color:var(--clay);text-decoration:none}.developer-credit a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:680px){.demo-welcome{padding:26px}.demo-brand{margin-bottom:22px}.footer-bottom{align-items:flex-start}}
+.demo-welcome{margin:auto}

@@ -1,6 +1,9 @@
-import { useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowDownRight, ArrowUpRight, Instagram, Menu, MessageCircle, X } from 'lucide-react';
 import ProjectGallery from './components/ProjectGallery';
+
+// Desative após a aprovação da demonstração.
+const showDemoWelcome = true;
 
 const waNumber = '5511947006453';
 const waRoot = `https://wa.me/${waNumber}`;
@@ -34,6 +37,19 @@ const reviews = [
 ];
 
 function App() {
+  const [demoOpen, setDemoOpen] = useState(showDemoWelcome);
+  const demoDialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const dialog = demoDialog.current;
+    if (!demoOpen || !dialog) return;
+    dialog.showModal();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (dialog.open) dialog.close();
+    };
+  }, [demoOpen]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formErrors, setFormErrors] = useState({ name: '', region: '', need: '' });
   const [submitError, setSubmitError] = useState('');
@@ -80,6 +96,17 @@ function App() {
 
   return (
     <div className="site-shell">
+      {demoOpen && (
+        <dialog ref={demoDialog} className="demo-welcome" aria-labelledby="demo-title" aria-describedby="demo-description" onCancel={() => setDemoOpen(false)}>
+          <div className="demo-brand">GESTÃO <strong>M7</strong></div>
+          <span className="demo-badge">Versão demonstrativa</span>
+          <h2 id="demo-title">Seu novo site está pronto.</h2>
+          <p id="demo-description">Boas-vindas à Gestão M7! Preparamos esta demonstração para você conhecer o novo site da Melo &amp; Gomes.</p>
+          <div className="demo-note"><strong>Vamos deixar tudo do seu jeito.</strong><p>Nesta etapa, você pode solicitar alterações ilimitadas. Explore o site e conte para a nossa equipe o que gostaria de ajustar.</p></div>
+          <button className="button demo-enter" type="button" onClick={() => setDemoOpen(false)} autoFocus>Ver site <ArrowUpRight size={18} aria-hidden="true" /></button>
+          <p className="demo-signature">Criado com cuidado pela Gestão M7.</p>
+        </dialog>
+      )}
       <a className="skip-link" href="#main-content">Pular para o conteúdo</a>
       <header className="header">
         <div className="container header-inner">
@@ -209,7 +236,7 @@ function App() {
               <div className="footer-detail"><strong>Localização</strong><span>São Paulo - SP</span></div>
             </div>
           </div>
-          <div className="footer-bottom"><span>Melo &amp; Gomes Marcenaria</span><span>São Paulo · SP</span></div>
+          <div className="footer-bottom"><span>Melo &amp; Gomes Marcenaria</span><span>São Paulo · SP</span><span className="developer-credit">Desenvolvido pela <a href="https://www.gestaom7.com.br" target="_blank" rel="noopener noreferrer">Gestão M7 <ArrowUpRight size={12} aria-hidden="true" /></a></span></div>
         </div>
       </footer>
 
