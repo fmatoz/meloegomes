@@ -24,6 +24,9 @@ const serviceItems = [
   },
 ];
 
+const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Melo & Gomes Marcenaria Av. Eng. Heitor Antônio Eiras Garcia 3498 São Paulo');
+const reviewNames = ['Wagner Cunha', 'vitoria ellen', 'Tatiana Barbosa'];
+const reviewInitials = ['WC', 'VE', 'TB'];
 const reviews = [
   'A obra foi efetuada com esmero e a equipe cumpriu os prazos combinados.',
   'O melhor do mercado , entregue no prazo é tudo maravilhoso !!',
@@ -98,7 +101,7 @@ function App() {
 
       <main id="main-content">
         <section className="hero" id="inicio" aria-labelledby="hero-title">
-          <div className="container hero-content">
+          <div className="container hero-layout"><div className="hero-content">
             <span className="eyebrow">Marcenaria sob medida · São Paulo</span>
             <h1 id="hero-title">Marcenaria sob medida para <em>aproveitar melhor</em> cada ambiente</h1>
             <p className="hero-copy">Projetos personalizados para sua casa, com soluções pensadas para o espaço e para o que você precisa.</p>
@@ -107,6 +110,8 @@ function App() {
               <a className="button button--outline" href="#projetos" data-testid="link-hero-projects">Ver projetos <ArrowDownRight size={16} aria-hidden="true" /></a>
             </div>
             <div className="hero-proof" data-testid="text-hero-proof"><span className="hero-proof-star" aria-hidden="true">★</span><span><strong>4,9 no Google</strong><span className="hero-proof-divider" aria-hidden="true"> · </span>Atendimento em São Paulo</span></div>
+          </div>
+          <figure className="hero-project"><img src="/projects/painel-tv-branco-madeira.webp" alt="Painel de TV sob medida com madeira ripada e gavetas brancas realizado pela Melo & Gomes." fetchPriority="high" /><figcaption><span>Detalhes que fazem a diferença</span><strong>Marcenaria feita para o seu espaço</strong></figcaption></figure>
           </div>
         </section>
 
@@ -148,11 +153,11 @@ function App() {
             </div>
             <div className="review-rating" data-testid="rating-google">
               <span className="review-rating-star" aria-hidden="true">★</span>
-              <strong>4,9 no Google</strong>
+              <strong>4,9 no Google</strong><a className="reviews-google-link" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">Ver no Google <ArrowUpRight size={14} aria-hidden="true" /></a>
             </div>
             <div className="review-grid">
               {reviews.map((review, index) => (
-                <blockquote className="review-card" key={review} data-testid={`quote-review-${index + 1}`}>{review}</blockquote>
+                <blockquote className="review-card" key={review} data-testid={`quote-review-${index + 1}`}><p>“{review}”</p><footer className="review-author"><span className="review-avatar" aria-hidden="true">{reviewInitials[index]}</span><div><strong>{reviewNames[index]}</strong><span>Avaliação no Google</span></div></footer></blockquote>
               ))}
             </div>
           </div>
@@ -208,9 +213,9 @@ function App() {
         </div>
       </footer>
 
-      <button className="floating-whatsapp" type="button" onClick={focusQuoteForm} aria-label="Solicitar orçamento pelo WhatsApp" data-testid="button-floating-whatsapp">
+      <a className="floating-whatsapp" href={`${waRoot}?text=${encodeURIComponent("Olá! Vim pelo site da Melo & Gomes e gostaria de conversar sobre um projeto.")}`} target="_blank" rel="noopener noreferrer" aria-label="Conversar diretamente pelo WhatsApp" data-testid="button-floating-whatsapp">
         <MessageCircle size={18} aria-hidden="true" /><span>Fale pelo WhatsApp</span>
-      </button>
+      </a>
     </div>
   );
 }

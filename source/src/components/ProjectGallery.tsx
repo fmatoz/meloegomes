@@ -80,6 +80,11 @@ const projectPhotos = [
   },
 ];
 
+const featuredOrder = ['painel-tv-branco-madeira', 'adega-sob-escada', 'painel-ripado-tv', 'cozinha-planejada', 'quarto-planejado', 'mesa-madeira'];
+projectPhotos.sort((a,b) => {
+const rank = (src: string) => {const index = featuredOrder.findIndex(name => src.includes(name + '.webp')); return index < 0 ? featuredOrder.length : index;};
+return rank(a.src) - rank(b.src);
+});
 const carouselOptions = { align: 'start' as const, loop: true };
 
 function ProjectGallery() {
