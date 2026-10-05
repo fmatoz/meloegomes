@@ -332,3 +332,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .site-shell[data-motion="enabled"] .demo-welcome[open]{animation:demo-enter .65s cubic-bezier(.16,1,.3,1) both}
 .site-shell[data-motion="enabled"] .demo-welcome[open]::backdrop{animation:backdrop-enter .45s ease both}
 @media print{.site-shell[data-motion="enabled"] .scroll-reveal,.site-shell[data-motion="enabled"] .scroll-reveal.is-revealed{animation:none;opacity:1;transform:none}}
+/* Cards de serviços independentes sobre o fundo claro. */
+.service-grid{gap:16px;background:transparent;border:0;border-radius:0;overflow:visible}
+.service-card{background:var(--ink);border:1px solid #2c2925;border-radius:12px;padding:28px 24px;min-height:238px;box-shadow:0 8px 20px rgba(17,17,17,.06);transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.service-card:hover{background:#1d1b18;border-color:#8b5e3c;box-shadow:0 12px 28px rgba(17,17,17,.12)}
+.service-num{color:var(--clay);margin-bottom:28px}
+.service-card h3{color:var(--paper);font-size:24px;line-height:1.2;margin-bottom:14px}
+.service-card p{color:#c8c1b9;font-size:14px;line-height:1.75}
+@media(max-width:900px){.service-grid{gap:14px}.service-card{min-height:215px}}
+@media(max-width:680px){.service-grid{gap:12px}.service-card{min-height:0;padding:26px 24px}.service-num{margin-bottom:18px}.service-card h3{font-size:24px}}
