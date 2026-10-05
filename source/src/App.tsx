@@ -37,6 +37,7 @@ const reviews = [
 ];
 
 function App() {
+  const [motionEnabled, setMotionEnabled] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [demoOpen, setDemoOpen] = useState(showDemoWelcome);
   const demoDialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -51,7 +52,7 @@ function App() {
     };
   }, [demoOpen]);
   useEffect(() => {
-    if (demoOpen || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    if (demoOpen || !motionEnabled || !('IntersectionObserver' in window)) return;
     const targets = Array.from(document.querySelectorAll<HTMLElement>('.section-heading, .service-card, .project-gallery, .review-card, .final-copy, .quote-form'));
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -71,7 +72,7 @@ function App() {
       observer.disconnect();
       targets.forEach(element => element.classList.remove('scroll-reveal', 'is-revealed'));
     };
-  }, [demoOpen]);
+  }, [demoOpen, motionEnabled]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formErrors, setFormErrors] = useState({ name: '', region: '', need: '' });
   const [submitError, setSubmitError] = useState('');
@@ -117,7 +118,7 @@ function App() {
   );
 
   return (
-    <div className="site-shell">
+    <div className="site-shell" data-motion={motionEnabled ? "enabled" : "reduced"}>
       {demoOpen && (
         <dialog ref={demoDialog} className="demo-welcome" aria-labelledby="demo-title" aria-describedby="demo-description" onCancel={() => setDemoOpen(false)}>
           <div className="demo-brand"><img src="/gestao-m7-logo.png" alt="Gestão M7 IA" width="1920" height="1080" /></div>
@@ -126,6 +127,7 @@ function App() {
           <p id="demo-description">Boas-vindas à Gestão M7! Preparamos esta demonstração para você conhecer o novo site da Melo &amp; Gomes.</p>
           <div className="demo-note"><strong>Vamos deixar tudo do seu jeito.</strong><p>Nesta etapa, você pode solicitar alterações ilimitadas. Explore o site e conte para a nossa equipe o que gostaria de ajustar.</p></div>
           <button className="button demo-enter" type="button" onClick={() => setDemoOpen(false)} autoFocus>Ver site <ArrowUpRight size={18} aria-hidden="true" /></button>
+          {!motionEnabled && <button className="demo-motion-toggle" type="button" onClick={() => setMotionEnabled(true)}>Ativar efeitos visuais nesta visita</button>}
           <p className="demo-signature">Criado com cuidado pela Gestão M7.</p>
         </dialog>
       )}
