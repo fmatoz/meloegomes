@@ -80,14 +80,144 @@ const projectPhotos = [
   },
 ];
 
+projectPhotos.push(...[
+  {
+    "src": "/projects/portas-coloridas-01.webp",
+    "alt": "Portas de correr coloridas — trabalho da Melo & Gomes.",
+    "caption": "Portas de correr coloridas"
+  },
+  {
+    "src": "/projects/revestimento-madeira.webp",
+    "alt": "Revestimento e portas em madeira — trabalho da Melo & Gomes.",
+    "caption": "Revestimento e portas em madeira"
+  },
+  {
+    "src": "/projects/cozinha-branca-madeira.webp",
+    "alt": "Cozinha branca com acabamento amadeirado — trabalho da Melo & Gomes.",
+    "caption": "Cozinha branca com acabamento amadeirado"
+  },
+  {
+    "src": "/projects/escritorio-planejado.webp",
+    "alt": "Móveis para escritório — trabalho da Melo & Gomes.",
+    "caption": "Móveis para escritório"
+  },
+  {
+    "src": "/projects/divulgacao-melo-gomes.webp",
+    "alt": "Melo & Gomes — apresentação dos serviços — trabalho da Melo & Gomes.",
+    "caption": "Melo & Gomes — apresentação dos serviços"
+  },
+  {
+    "src": "/projects/penteadeira-espelho-led.webp",
+    "alt": "Penteadeira com espelho iluminado — trabalho da Melo & Gomes.",
+    "caption": "Penteadeira com espelho iluminado"
+  },
+  {
+    "src": "/projects/prateleiras-movel-cinza.webp",
+    "alt": "Prateleiras e móvel com gavetas — trabalho da Melo & Gomes.",
+    "caption": "Prateleiras e móvel com gavetas"
+  },
+  {
+    "src": "/projects/painel-ripado-espelho.webp",
+    "alt": "Painel ripado e espelho — trabalho da Melo & Gomes.",
+    "caption": "Painel ripado e espelho"
+  },
+  {
+    "src": "/projects/bancada-branca-l.webp",
+    "alt": "Bancada branca em L — trabalho da Melo & Gomes.",
+    "caption": "Bancada branca em L"
+  },
+  {
+    "src": "/projects/prateleiras-madeira.webp",
+    "alt": "Prateleiras de madeira — trabalho da Melo & Gomes.",
+    "caption": "Prateleiras de madeira"
+  },
+  {
+    "src": "/projects/quarto-cabeceira-branca.webp",
+    "alt": "Cabeceira e mesas de cabeceira — trabalho da Melo & Gomes.",
+    "caption": "Cabeceira e mesas de cabeceira"
+  },
+  {
+    "src": "/projects/quarto-portas-correr.webp",
+    "alt": "Móvel para quarto com portas de correr — trabalho da Melo & Gomes.",
+    "caption": "Móvel para quarto com portas de correr"
+  },
+  {
+    "src": "/projects/cozinha-gabinete-branco.webp",
+    "alt": "Cozinha com gabinete branco — trabalho da Melo & Gomes.",
+    "caption": "Cozinha com gabinete branco"
+  },
+  {
+    "src": "/projects/lavabo-revestido.webp",
+    "alt": "Lavabo com revestimento branco — trabalho da Melo & Gomes.",
+    "caption": "Lavabo com revestimento branco"
+  },
+  {
+    "src": "/projects/balcao-ripado-comercial.webp",
+    "alt": "Balcão comercial e painel ripado — trabalho da Melo & Gomes.",
+    "caption": "Balcão comercial e painel ripado"
+  },
+  {
+    "src": "/projects/bancada-comercial-madeira.webp",
+    "alt": "Bancada e móvel comercial — trabalho da Melo & Gomes.",
+    "caption": "Bancada e móvel comercial"
+  },
+  {
+    "src": "/projects/gaveteiros-comerciais.webp",
+    "alt": "Gaveteiros e móveis comerciais — trabalho da Melo & Gomes.",
+    "caption": "Gaveteiros e móveis comerciais"
+  },
+  {
+    "src": "/projects/portas-coloridas-02.webp",
+    "alt": "Portas de correr coloridas — outro ângulo — trabalho da Melo & Gomes.",
+    "caption": "Portas de correr coloridas — outro ângulo"
+  }
+]);
 const featuredOrder = ['painel-tv-branco-madeira', 'adega-sob-escada', 'painel-ripado-tv', 'cozinha-planejada', 'quarto-planejado', 'mesa-madeira'];
 projectPhotos.sort((a,b) => {
 const rank = (src: string) => {const index = featuredOrder.findIndex(name => src.includes(name + '.webp')); return index < 0 ? featuredOrder.length : index;};
 return rank(a.src) - rank(b.src);
 });
+const featuredPhotos = projectPhotos.slice(0, 6);
+const photoCategories: Record<string, string> = {
+  "/projects/portas-coloridas-01.webp": "Comerciais",
+  "/projects/revestimento-madeira.webp": "Salas",
+  "/projects/cozinha-branca-madeira.webp": "Cozinhas",
+  "/projects/escritorio-planejado.webp": "Comerciais",
+  "/projects/divulgacao-melo-gomes.webp": "Outros projetos",
+  "/projects/penteadeira-espelho-led.webp": "Quartos",
+  "/projects/prateleiras-movel-cinza.webp": "Outros projetos",
+  "/projects/painel-ripado-espelho.webp": "Salas",
+  "/projects/bancada-branca-l.webp": "Comerciais",
+  "/projects/prateleiras-madeira.webp": "Salas",
+  "/projects/quarto-cabeceira-branca.webp": "Quartos",
+  "/projects/quarto-portas-correr.webp": "Quartos",
+  "/projects/cozinha-gabinete-branco.webp": "Cozinhas",
+  "/projects/lavabo-revestido.webp": "Banheiros",
+  "/projects/balcao-ripado-comercial.webp": "Comerciais",
+  "/projects/bancada-comercial-madeira.webp": "Comerciais",
+  "/projects/gaveteiros-comerciais.webp": "Comerciais",
+  "/projects/portas-coloridas-02.webp": "Comerciais",
+  "/projects/cozinha-planejada.webp": "Cozinhas",
+  "/projects/cozinha-escura.webp": "Cozinhas",
+  "/projects/gabinete-banheiro-azul.webp": "Banheiros",
+  "/projects/gabinete-banheiro-branco.webp": "Banheiros",
+  "/projects/quarto-planejado.webp": "Quartos",
+  "/projects/guarda-roupa-escuro.webp": "Quartos",
+  "/projects/criado-mudo.webp": "Quartos",
+  "/projects/painel-ripado-tv.webp": "Salas",
+  "/projects/painel-ripado-prateleiras.webp": "Salas",
+  "/projects/painel-tv-branco-madeira.webp": "Salas",
+  "/projects/painel-tv-instalacao.webp": "Salas",
+  "/projects/mesa-madeira.webp": "Salas",
+  "/projects/balcao-madeira.webp": "Comerciais",
+  "/projects/adega-sob-escada.webp": "Outros projetos"
+};
+const categories = ["Todos", "Cozinhas", "Quartos", "Banheiros", "Salas", "Comerciais", "Outros projetos"];
 const carouselOptions = { align: 'start' as const, loop: true };
 
 function ProjectGallery() {
+  const [archiveOpen, setArchiveOpen] = useState(false);
+  const [category, setCategory] = useState("Todos");
   const [api, setApi] = useState<CarouselApi>();
   const [activeSlide, setActiveSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -176,11 +306,11 @@ function ProjectGallery() {
         aria-label="Galeria de projetos da Melo & Gomes"
       >
         <CarouselContent className="project-carousel-track">
-          {projectPhotos.map((photo, index) => (
+          {featuredPhotos.map((photo, index) => (
             <CarouselItem
               className="project-carousel-item"
               key={photo.src}
-              aria-label={`${index + 1} de ${projectPhotos.length}: ${photo.caption}`}
+              aria-label={`${index + 1} de ${featuredPhotos.length}: ${photo.caption}`}
               data-testid={`gallery-slide-${index + 1}`}
             >
               <article className="project-card">
@@ -212,7 +342,7 @@ function ProjectGallery() {
 
       <div className="gallery-toolbar">
         <div className="gallery-pagination" role="group" aria-label="Selecionar foto do projeto">
-          {projectPhotos.map((photo, index) => (
+          {featuredPhotos.map((photo, index) => (
             <button
               key={photo.src}
               className={`gallery-dot${activeSlide === index ? ' is-active' : ''}`}
@@ -253,6 +383,12 @@ function ProjectGallery() {
         </div>
       </div>
 
+      <div className="archive-launch"><button className="button" type="button" aria-expanded={archiveOpen} aria-controls="project-archive" onClick={() => setArchiveOpen(!archiveOpen)}>{archiveOpen ? 'Recolher projetos' : 'Ver mais projetos'} <span>({projectPhotos.length} imagens)</span></button></div>
+      {archiveOpen && <div id="project-archive" className="project-archive">
+        <div className="archive-filters" role="group" aria-label="Filtrar projetos por ambiente">{categories.map(item => <button type="button" key={item} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
+        <p className="archive-summary" role="status">{projectPhotos.filter(photo => category === 'Todos' || photoCategories[photo.src] === category).length} imagens · {category}</p>
+        <div className="archive-grid">{projectPhotos.map((photo, index) => (category === 'Todos' || photoCategories[photo.src] === category) && <article className="project-card" key={photo.src}><button className="project-image-button" type="button" aria-label={`Ampliar foto: ${photo.caption}`} onClick={() => {setLightboxIndex(index);pauseForInteraction();}}><span className="project-image-frame"><img className="project-card-image" src={photo.src} alt={photo.alt} loading="lazy" decoding="async" /></span></button><p className="archive-caption">{photo.caption}</p></article>)}</div>
+      </div>}
       <dialog
         ref={lightboxRef}
         className="project-lightbox"
