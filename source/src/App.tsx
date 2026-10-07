@@ -147,7 +147,7 @@ function App() {
             {navLink('Avaliações', '#avaliacoes')}
             {navLink('Contato', '#contato')}
           </nav>
-          <button className="button header-quote" type="button" onClick={focusQuoteForm} data-testid="button-header-quote">Solicitar orçamento <ArrowUpRight size={15} aria-hidden="true" /></button>
+          <button className="button header-quote" type="button" onClick={focusQuoteForm} data-testid="button-header-quote">Solicitar orçamento sem compromisso <ArrowUpRight size={15} aria-hidden="true" /></button>
           <button className="menu-toggle" type="button" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)} data-testid="button-mobile-menu">
             {menuOpen ? <X size={19} aria-hidden="true" /> : <Menu size={19} aria-hidden="true" />}
           </button>
@@ -161,7 +161,7 @@ function App() {
             <h1 id="hero-title">Construímos o seu sonho <em>na sua medida!</em></h1>
             <p className="hero-copy">Marcenaria sob medida e serviços para obras e reformas, com soluções para a sua casa e sua empresa.</p>
             <div className="hero-actions">
-              <button className="button button--light" type="button" onClick={focusQuoteForm} data-testid="button-hero-quote">Solicitar orçamento <ArrowUpRight size={16} aria-hidden="true" /></button>
+              <button className="button button--light" type="button" onClick={focusQuoteForm} data-testid="button-hero-quote">Solicitar orçamento sem compromisso <ArrowUpRight size={16} aria-hidden="true" /></button>
               <a className="button button--outline" href="#projetos" data-testid="link-hero-projects">Ver projetos <ArrowDownRight size={16} aria-hidden="true" /></a>
             </div>
             <p className="quote-assurance">Orçamento sem compromisso.</p>
@@ -193,7 +193,7 @@ function App() {
         <section className="promotion-section" aria-labelledby="promotion-title">
           <div className="container promotion-layout">
             <a className="promotion-image" href="/projects/divulgacao-melo-gomes.webp" target="_blank" rel="noopener noreferrer" aria-label="Ver a apresentação completa da Melo & Gomes"><img src="/projects/divulgacao-melo-gomes.webp" alt="Apresentação da Melo & Gomes Marcenaria com exemplos de projetos, serviços e contatos." loading="lazy" decoding="async" /></a>
-            <div className="promotion-copy"><span className="eyebrow">Conheça a Melo &amp; Gomes</span><h2 id="promotion-title">Do projeto ao acabamento.</h2><p>Marcenaria sob medida e serviços gerais para a sua casa e sua empresa. Conte sua ideia e converse com a nossa equipe.</p><button className="button" type="button" onClick={focusQuoteForm}>Solicitar orçamento <ArrowUpRight size={16} aria-hidden="true" /></button><p className="promotion-assurance">Orçamento sem compromisso.</p></div>
+            <div className="promotion-copy"><span className="eyebrow">Conheça a Melo &amp; Gomes</span><h2 id="promotion-title">Do projeto ao acabamento.</h2><p>Marcenaria sob medida e serviços gerais para a sua casa e sua empresa. Conte sua ideia e converse com a nossa equipe.</p><button className="button" type="button" onClick={focusQuoteForm}>Solicitar orçamento sem compromisso <ArrowUpRight size={16} aria-hidden="true" /></button><p className="promotion-assurance">Orçamento sem compromisso.</p></div>
           </div>
         </section>
         <section className="section projects-section" id="projetos" aria-labelledby="projects-title">
