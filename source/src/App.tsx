@@ -190,6 +190,12 @@ function App() {
           </div>
         </section>
 
+        <section className="promotion-section" aria-labelledby="promotion-title">
+          <div className="container promotion-layout">
+            <a className="promotion-image" href="/projects/divulgacao-melo-gomes.webp" target="_blank" rel="noopener noreferrer" aria-label="Ver a apresentação completa da Melo & Gomes"><img src="/projects/divulgacao-melo-gomes.webp" alt="Apresentação da Melo & Gomes Marcenaria com exemplos de projetos, serviços e contatos." loading="lazy" decoding="async" /></a>
+            <div className="promotion-copy"><span className="eyebrow">Conheça a Melo &amp; Gomes</span><h2 id="promotion-title">Do projeto ao acabamento.</h2><p>Marcenaria sob medida e serviços gerais para a sua casa e sua empresa. Conte sua ideia e converse com a nossa equipe.</p><button className="button" type="button" onClick={focusQuoteForm}>Solicitar orçamento <ArrowUpRight size={16} aria-hidden="true" /></button><p className="promotion-assurance">Orçamento sem compromisso.</p></div>
+          </div>
+        </section>
         <section className="section projects-section" id="projetos" aria-labelledby="projects-title">
           <div className="container">
             <div className="section-heading">

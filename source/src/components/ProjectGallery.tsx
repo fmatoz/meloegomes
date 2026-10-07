@@ -172,6 +172,78 @@ projectPhotos.push(...[
     "caption": "Portas de correr coloridas — outro ângulo"
   }
 ]);
+projectPhotos.push(...[
+  {
+    "src": "/projects/quarto-ripado-aereo.webp",
+    "caption": "Cabeceira ripada e móvel aéreo",
+    "alt": "Cabeceira ripada e móvel aéreo — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/quarto-madeira-correr.webp",
+    "caption": "Móveis de quarto em madeira",
+    "alt": "Móveis de quarto em madeira — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/sala-cristaleira-detalhe.webp",
+    "caption": "Painel e cristaleira — detalhes",
+    "alt": "Painel e cristaleira — detalhes — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/sala-cristaleira-ambiente.webp",
+    "caption": "Móveis para sala e jantar",
+    "alt": "Móveis para sala e jantar — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/cozinha-verde-planejada.webp",
+    "caption": "Cozinha em tom verde",
+    "alt": "Cozinha em tom verde — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/cadeiras-madeira-parede.webp",
+    "caption": "Cadeiras de madeira com suporte na parede",
+    "alt": "Cadeiras de madeira com suporte na parede — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/painel-tv-prateleiras-madeira.webp",
+    "caption": "Painel de TV e prateleiras em madeira",
+    "alt": "Painel de TV e prateleiras em madeira — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/sala-cristaleira-frontal.webp",
+    "caption": "Painel e cristaleira — vista frontal",
+    "alt": "Painel e cristaleira — vista frontal — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/porta-madeira-antes.webp",
+    "caption": "Porta de madeira — antes do acabamento",
+    "alt": "Porta de madeira — antes do acabamento — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/cozinha-gabinete-amadeirado.webp",
+    "caption": "Gabinete amadeirado para cozinha",
+    "alt": "Gabinete amadeirado para cozinha — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/cozinha-grafite-completa.webp",
+    "caption": "Cozinha planejada grafite",
+    "alt": "Cozinha planejada grafite — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/estante-livros-painel.webp",
+    "caption": "Estante de livros e painel em madeira",
+    "alt": "Estante de livros e painel em madeira — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/estante-livros-outro-angulo.webp",
+    "caption": "Estante de livros — outro ângulo",
+    "alt": "Estante de livros — outro ângulo — trabalho da Melo & Gomes."
+  },
+  {
+    "src": "/projects/porta-madeira-depois.webp",
+    "caption": "Porta de madeira — acabamento concluído",
+    "alt": "Porta de madeira — acabamento concluído — trabalho da Melo & Gomes."
+  }
+]);
 const featuredOrder = ['painel-tv-branco-madeira', 'adega-sob-escada', 'painel-ripado-tv', 'cozinha-planejada', 'quarto-planejado', 'mesa-madeira'];
 projectPhotos.sort((a,b) => {
 const rank = (src: string) => {const index = featuredOrder.findIndex(name => src.includes(name + '.webp')); return index < 0 ? featuredOrder.length : index;};
@@ -212,6 +284,22 @@ const photoCategories: Record<string, string> = {
   "/projects/balcao-madeira.webp": "Comerciais",
   "/projects/adega-sob-escada.webp": "Outros projetos"
 };
+Object.assign(photoCategories, {
+  "/projects/quarto-ripado-aereo.webp": "Quartos",
+  "/projects/quarto-madeira-correr.webp": "Quartos",
+  "/projects/sala-cristaleira-detalhe.webp": "Salas",
+  "/projects/sala-cristaleira-ambiente.webp": "Salas",
+  "/projects/cozinha-verde-planejada.webp": "Cozinhas",
+  "/projects/cadeiras-madeira-parede.webp": "Outros projetos",
+  "/projects/painel-tv-prateleiras-madeira.webp": "Salas",
+  "/projects/sala-cristaleira-frontal.webp": "Salas",
+  "/projects/porta-madeira-antes.webp": "Outros projetos",
+  "/projects/cozinha-gabinete-amadeirado.webp": "Cozinhas",
+  "/projects/cozinha-grafite-completa.webp": "Cozinhas",
+  "/projects/estante-livros-painel.webp": "Salas",
+  "/projects/estante-livros-outro-angulo.webp": "Salas",
+  "/projects/porta-madeira-depois.webp": "Outros projetos"
+});
 const categories = ["Todos", "Cozinhas", "Quartos", "Banheiros", "Salas", "Comerciais", "Outros projetos"];
 const carouselOptions = { align: 'start' as const, loop: true };
 
