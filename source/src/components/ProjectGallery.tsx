@@ -31,7 +31,7 @@ const projectPhotos = [
   {
     src: '/projects/cozinha-planejada.webp',
     alt: 'Armários cinza sob medida em cozinha compacta.',
-    caption: 'Armários de cozinha',
+    caption: 'Cozinha sob medida',
   },
   {
     src: '/projects/painel-ripado-prateleiras.webp',
@@ -61,7 +61,7 @@ const projectPhotos = [
   {
     src: '/projects/guarda-roupa-escuro.webp',
     alt: 'Guarda-roupa planejado escuro com portas e gavetas.',
-    caption: 'Guarda-roupa planejado',
+    caption: 'Móveis para quarto',
   },
   {
     src: '/projects/painel-tv-instalacao.webp',
@@ -71,7 +71,7 @@ const projectPhotos = [
   {
     src: '/projects/cozinha-escura.webp',
     alt: 'Armários planejados escuros com nichos para eletrodomésticos.',
-    caption: 'Armários planejados',
+    caption: 'Cozinha sob medida',
   },
   {
     src: '/projects/gabinete-banheiro-branco.webp',

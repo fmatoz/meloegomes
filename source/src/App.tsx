@@ -10,21 +10,25 @@ const waRoot = `https://wa.me/${waNumber}`;
 
 const serviceItems = [
   {
-    title: 'Marcenaria sob medida',
-    description: 'Projetos personalizados de acordo com o espaço e a necessidade de cada ambiente.',
+    "title": "Cozinha sob medida",
+    "description": "Móveis planejados para uma cozinha funcional, com organização e melhor aproveitamento do espaço."
   },
   {
-    title: 'Armários e guarda-roupas',
-    description: 'Soluções para organização e melhor aproveitamento do espaço.',
+    "title": "Móveis para quarto",
+    "description": "Guarda-roupas, cabeceiras e móveis sob medida para tornar seu dormitório mais confortável e organizado."
   },
   {
-    title: 'Móveis para banheiro',
-    description: 'Marcenaria funcional e personalizada para o ambiente.',
+    "title": "Móveis para banheiro",
+    "description": "Gabinetes e soluções sob medida para aproveitar o espaço e valorizar seu banheiro."
   },
   {
-    title: 'Projetos especiais',
-    description: 'Soluções para nichos, áreas sob escada, adegas e móveis auxiliares.',
+    "title": "Projetos especiais",
+    "description": "Soluções para sua casa e sua empresa, incluindo nichos, adegas, áreas sob escada e móveis comerciais."
   },
+  {
+    "title": "Serviços gerais",
+    "description": "Serviços de pedreiro, elétrica e pintura para obras e reformas da sua casa ou empresa."
+  }
 ];
 
 const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Melo & Gomes Marcenaria Av. Eng. Heitor Antônio Eiras Garcia 3498 São Paulo');
@@ -154,12 +158,13 @@ function App() {
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <div className="container hero-layout"><div className="hero-content">
             <span className="eyebrow">Marcenaria sob medida · São Paulo</span>
-            <h1 id="hero-title">Marcenaria sob medida para <em>aproveitar melhor</em> cada ambiente</h1>
-            <p className="hero-copy">Projetos personalizados para sua casa, com soluções pensadas para o espaço e para o que você precisa.</p>
+            <h1 id="hero-title">Construímos o seu sonho <em>na sua medida!</em></h1>
+            <p className="hero-copy">Marcenaria sob medida e serviços para obras e reformas, com soluções para a sua casa e sua empresa.</p>
             <div className="hero-actions">
               <button className="button button--light" type="button" onClick={focusQuoteForm} data-testid="button-hero-quote">Solicitar orçamento <ArrowUpRight size={16} aria-hidden="true" /></button>
               <a className="button button--outline" href="#projetos" data-testid="link-hero-projects">Ver projetos <ArrowDownRight size={16} aria-hidden="true" /></a>
             </div>
+            <p className="quote-assurance">Orçamento sem compromisso.</p>
             <div className="hero-proof" data-testid="text-hero-proof"><span className="hero-proof-star" aria-hidden="true">★</span><span><strong>4,9 no Google</strong><span className="hero-proof-divider" aria-hidden="true"> · </span>Atendimento em São Paulo</span></div>
           </div>
           <div className="hero-mosaic" role="group" aria-label="Nove projetos reais da Melo & Gomes"><img src="/projects/cozinha-planejada.webp" alt="Cozinha com armários sob medida" width="200" height="200" decoding="async" /><img src="/projects/adega-sob-escada.webp" alt="Adega planejada sob a escada" width="200" height="200" decoding="async" /><img src="/projects/painel-tv-branco-madeira.webp" alt="Painel de TV com madeira e gavetas brancas" width="200" height="200" decoding="async" /><img src="/projects/gabinete-banheiro-azul.webp" alt="Gabinete azul para banheiro" width="200" height="200" decoding="async" /><img src="/projects/mesa-madeira.webp" alt="Mesa de madeira sob medida" width="200" height="200" decoding="async" /><img src="/projects/painel-ripado-prateleiras.webp" alt="Painel ripado com prateleiras" width="200" height="200" decoding="async" /><img src="/projects/quarto-planejado.webp" alt="Quarto com móveis planejados" width="200" height="200" decoding="async" /><img src="/projects/guarda-roupa-escuro.webp" alt="Guarda-roupa planejado escuro" width="200" height="200" decoding="async" /><img src="/projects/balcao-madeira.webp" alt="Balcão de madeira sob medida" width="200" height="200" decoding="async" /></div>
@@ -169,9 +174,9 @@ function App() {
         <section className="section services-section" id="servicos" aria-labelledby="services-title">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Soluções para sua casa</span>
+              <span className="eyebrow">Soluções para a sua casa e sua empresa</span>
               <h2 id="services-title">Marcenaria feita para o seu espaço</h2>
-              <p>Soluções sob medida para diferentes ambientes e necessidades.</p>
+              <p>Marcenaria por ambiente e serviços gerais para transformar o seu espaço.</p>
             </div>
             <div className="service-grid">
               {serviceItems.map((item, index) => (
@@ -223,7 +228,7 @@ function App() {
             </div>
             <form className="quote-form" id="quote-form" onSubmit={submitQuote} noValidate>
               <h3>Solicite seu orçamento</h3>
-              <p className="form-intro">Preencha os três campos para continuar pelo WhatsApp.</p>
+              <p className="form-intro">Orçamento sem compromisso. Preencha os três campos para continuar pelo WhatsApp.</p>
               <div className="field">
                 <label htmlFor="quote-name">Seu nome <span aria-hidden="true">*</span></label>
                 <input ref={nameRef} id="quote-name" name="name" type="text" autoComplete="name" placeholder="Como podemos chamar você?" required aria-invalid={!!formErrors.name} aria-describedby="error-name" data-testid="input-quote-name" onChange={() => formErrors.name && setFormErrors({ ...formErrors, name: '' })} />

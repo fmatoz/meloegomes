@@ -341,3 +341,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .service-card p{color:#c8c1b9;font-size:14px;line-height:1.75}
 @media(max-width:900px){.service-grid{gap:14px}.service-card{min-height:215px}}
 @media(max-width:680px){.service-grid{gap:12px}.service-card{min-height:0;padding:26px 24px}.service-num{margin-bottom:18px}.service-card h3{font-size:24px}}
+/* Serviços organizados por ambientes e reformas. */
+.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.quote-assurance{margin:16px 0 0;color:var(--clay);font-size:13px}
+@media(max-width:900px){.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.service-grid{grid-template-columns:1fr}}
