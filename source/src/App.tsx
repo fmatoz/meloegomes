@@ -3,7 +3,7 @@ import { ArrowDownRight, ArrowUpRight, Instagram, Menu, MessageCircle, X } from 
 import ProjectGallery from './components/ProjectGallery';
 
 // Desative após a aprovação da demonstração.
-const showDemoWelcome = true;
+const showDemoWelcome = false;
 
 const waNumber = '5511947006453';
 const waRoot = `https://wa.me/${waNumber}`;
